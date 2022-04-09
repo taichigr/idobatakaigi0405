@@ -1,13 +1,25 @@
 import firebase from 'firebase';
 
-// Your web app's Firebase configuration
+console.log(process.env.REACT_APP_FOO)
+
+const {
+REACT_APP_FIREBASE_API_KEY,
+REACT_APP_FIREBASE_AUTH_DOMAIN,
+REACT_APP_FIREBASE_DETABASE_URL,
+REACT_APP_FIREBASE_PROJECT_ID,
+REACT_APP_FIREBASE_STORAGE_BUCKET,
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+REACT_APP_FIREBASE_APP_ID,
+} = process.env;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBi4CNRgsgSF5Wt2NyVhN1b3ju9D6MSNbM",
-  authDomain: "idobata-49518.firebaseapp.com",
-  projectId: "idobata-49518",
-  storageBucket: "idobata-49518.appspot.com",
-  messagingSenderId: "995372961434",
-  appId: "1:995372961434:web:b8bacd1b6e99240d015923"
+  apiKey: REACT_APP_FIREBASE_API_KEY,
+  authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: REACT_APP_FIREBASE_DETABASE_URL,
+  projectId: REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: REACT_APP_FIREBASE_APP_ID
 };
 
 firebase.initializeApp(firebaseConfig);
