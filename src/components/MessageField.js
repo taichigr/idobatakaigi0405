@@ -2,6 +2,8 @@ import { TextField } from '@material-ui/core';
 import { SettingsInputCompositeRounded } from '@material-ui/icons';
 import React, { useState } from 'react';
 
+import { pushMessage } from '../firebase';
+
 
 const MessageField = ({name, setText, text}) => {
   const [isComposed, setIsComposed] = useState(false);
@@ -17,6 +19,7 @@ const MessageField = ({name, setText, text}) => {
           if(text === '') return;
           if(e.key === 'Enter') {
             console.log('Enterが押されたので、firebaseにpush')
+            pushMessage({name: 'わいやで', text });
             // setText(e.target.value);
             setText('');
             e.preventDefault();
